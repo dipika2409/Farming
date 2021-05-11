@@ -1,0 +1,62 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <br>
+    <h1><b>Update complaint here</b></h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="update-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+
+
+
+                <div class="form-group">
+                  <label for="name">Id</label>
+                  <input type="text" class="form-control" disabled="disabled" id="complaint_id" required
+                    [(ngModel)]="complaint.complaint_id" name="complaint_id">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="name">Complaint Type</label>
+                  <input type="text" class="form-control" id="complaint_type" disabled="disabled" required
+                    [(ngModel)]="complaint.complaint_type" name="complaint_type">
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Complaint Description</label>
+                  <input type="text" class="form-control" id="complaint_text" disabled="disabled" required
+                    [(ngModel)]="complaint.complaint_text" name="complaint_text">
+                </div>
+                <div class="form-group">
+                  <label for="name">Complaint Status</label>
+                  <select name="complaint_status" class="form-control" required
+                    [(ngModel)]="complaint.complaint_status">
+
+                    <option value="">--select status--</option>
+
+                    <option value="Solved">Solved</option>
+
+                    <option value="Pending">Pending</option>
+
+                  </select>
+
+                </div>
+                <button style='margin-right:16px' class="btn btn-primary">Submit</button>
+                <button style='margin-right:16px' (click)="list()" class="btn btn-primary">Back to Complaint</button>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

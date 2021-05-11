@@ -1,0 +1,35 @@
+<title>Kheti Mitra</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<div class="header">
+  <br><br>
+  <p><i>Kheti Mitra</i></p><br>
+  <!-- <img [src]="logo" alt="Notebook" > -->
+</div>
+<body>
+<div class="nav">
+  <ul>
+    <li><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li> <a class="nav-link" routerLink="/farmer/login" routerLinkActive="active">Farmer</a></li>
+    <li><a class="nav-link" routerLink="/supplier/login" routerLinkActive="active">Supplier</a></li>
+    <li><a class="nav-link" routerLink="/admin/login" routerLinkActive="active">Admin</a></li>
+    <li><a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a></li>
+    <li><a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a></li>
+    <h1><a class="nav-link" routerLink="/home" routerLinkActive="active">Logout</a></h1>
+
+  </ul>
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>
+</body>
+<footer>
+  <p>copyright © 2021 all rights reserved</p>
+</footer>

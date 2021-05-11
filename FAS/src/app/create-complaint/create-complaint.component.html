@@ -1,0 +1,61 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <h1>Drop complaint here</h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="complaint-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+
+
+
+                <div class="form-group">
+                  <label for="name">Complaint Type</label><span class="required">*</span>
+
+                  <select name="complaint_type" class="form-control" required [(ngModel)]="complaint.complaint_type"
+                    required #complaint_type="ngModel">
+
+                    <option value="">--Select complaint type--</option>
+
+                    <option value="Techical issue">Techical issue</option>
+
+                    <option value="Crop issue">Crop issue</option>
+
+                    <option value="Supplier issue">Supplier issue</option>
+
+                  </select>
+                  <span *ngIf="f.submitted && complaint_type.errors?.required">Please select complaint</span>
+
+                </div>
+
+
+                <div class="form-group">
+                  <label for="name">Complaint description</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="complaint_text" [(ngModel)]="complaint.complaint_text"
+                    name="complaint_text" #complaint_text="ngModel" maxlength="30" minlength="2" ngModel
+                    name="complaint_text">
+                  <span *ngIf="f.submitted && complaint_text.errors?.required">Please enter description</span>
+                  <span *ngIf="f.submitted && complaint_text.errors?.pattern">Invalid description</span>
+
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Create complaint</button>
+                <button style='margin-left:100px' (click)="home()" class="btn btn-primary"> Back </button>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

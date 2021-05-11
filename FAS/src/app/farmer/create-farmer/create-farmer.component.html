@@ -1,0 +1,30 @@
+<h3>Create Farmer</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form id="farmer-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+    <div class="form-group">
+      <label for="name">First Name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="first_name" required [(ngModel)]="farmer.first_name" name="first_name"
+        required #first_name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="name">Last name</label><span class="required">*</span>
+      <input type="text" class="form-control" id="last_name" required [(ngModel)]="farmer.last_name" name="last_name"
+        required #last_name="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Gender</label><span class="required">*</span>
+      <input type="text" class="form-control" id="gender" required [(ngModel)]="farmer.gender" name="gender">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Contact Details</label><span class="required">*</span>
+      <input type="text" class="form-control" id="contact_number" required [(ngModel)]="farmer.contact_number"
+        name="contact_number" required #contact_number="ngModel">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">CreateFarmer</button>
+  </form>
+</div>

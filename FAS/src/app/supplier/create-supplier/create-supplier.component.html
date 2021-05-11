@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <h3>Create Supplier</h3>
+  </div>
+
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="supplier-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+                <div class="form-group">
+
+                  <label for="name">Id</label><span class="required">*</span>
+
+                  <input type="text" class="form-control" id="supplier_id" required [(ngModel)]="supplier1.supplier_id"
+                    name="supplier_id">
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Supplier Name</label><span class="required">*</span>
+
+                  <input type="text" class="form-control" id="name" required [(ngModel)]="supplier1.name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="name">Mobile No</label><span class="required">*</span>
+
+                  <input type="text" class="form-control" id="mobile_no" required [(ngModel)]="supplier1.mobile_no"
+                    name="mobile_no">
+                </div>
+
+
+                <button class="btn btn-success">CreateSupplier</button>
+
+              </div>

@@ -1,0 +1,59 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+    <div id="login">
+
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <h1 class="text-center text-info">Farmer Login</h1>
+
+
+                        <div class="col-md-6 offset-md-3">
+
+                            <form [formGroup]="loginForm">
+
+                                <div class="form-group">
+                                    <label>Enter Username</label>
+                                    <input type="email" class="form-control" id="emailId" name="emailId"
+                                        formControlName="emailId"
+                                        [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }">
+                                    <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                                        <div *ngIf="f.emailId.errors.required">Username is required</div>
+                                        <div *ngIf="f.emailId.errors.minlength">Invalid Username</div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Enter Password </label>
+                                    <input type="password" class="form-control" id="password" formControlName="password"
+                                        name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Invalid password</div>
+                                    </div>
+                                </div>
+
+
+                                <button class="btn btn-primary" type="submit" (click)="onSubmit()">Login</button>
+                                <button style='margin-left:100px' (click)="home1()" class="btn btn-primary"> Back
+                                </button>
+
+
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

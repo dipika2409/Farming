@@ -1,0 +1,31 @@
+<h3>
+  Update Farmer
+</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Id</label>
+    <input type="text" class="form-control" disabled="disabled" id="farmer_id" required [(ngModel)]="farmer.farmer_id"
+      name="farmer_id">
+  </div>
+
+  <div class="form-group">
+    <label for="name">FName</label>
+    <input type="text" class="form-control" id="first_name" required [(ngModel)]="farmer.first_name" name="first_name">
+  </div>
+  <div class="form-group">
+    <label for="name">LName</label>
+    <input type="text" class="form-control" id="last_name" required [(ngModel)]="farmer.last_name" name="last_name">
+  </div>
+  <div class="form-group">
+    <label for="name">Gender</label>
+    <input type="text" class="form-control" id="gender" required [(ngModel)]="farmer.gender" name="gender">
+  </div>
+  <div class="form-group">
+    <label for="name">Contact Details</label>
+    <input type="text" class="form-control" id="contact_number" required [(ngModel)]="farmer.contact_number"
+      name="contact_number">
+  </div>
+  <button style='margin-right:16px' class="btn btn-success">Submit</button>
+  <button style='margin-right:16px' (click)="listF()" class="btn btn-success">Back to Farmers</button>
+
+</form>

@@ -1,0 +1,23 @@
+<h3>
+  Update Advertise
+</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Advertise Id</label>
+    <input type="text" class="form-control" disabled="disabled" id="adv_id" required [(ngModel)]="advertise.adv_id"
+      name="adv_id">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Advertise Title</label>
+    <input type="text" class="form-control" id="adv_title" required [(ngModel)]="advertise.adv_title" name="adv_title">
+  </div>
+  <div class="form-group">
+    <label for="name">Advertise Description</label>
+    <input type="text" class="form-control" id="adv_description" required [(ngModel)]="advertise.adv_description"
+      name="adv_description">
+  </div>
+  <button style='margin-right:16px' class="btn btn-success">Submit</button>
+  <button style='margin-right:16px' (click)="listA()" class="btn btn-success">Back to Advertise</button>
+
+</form>

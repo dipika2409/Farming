@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+
+
+
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <br>
+    <br>
+    <h1><b>Create advertise here</b></h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="advertise-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+
+
+
+
+                <div class="form-group">
+                  <label for="name">Advertise Title</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="adv_title" required [(ngModel)]="advertise.adv_title"
+                    name="adv_title" required #adv_title="ngModel">
+                  <span *ngIf="f.submitted && adv_title.errors?.required">Please enter title</span>
+                  <span *ngIf="f.submitted && adv_title.errors?.pattern">Invalid title</span>
+
+                </div>
+                <div class="form-group">
+                  <label for="name">Advertise Description</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="adv_description" required
+                    [(ngModel)]="advertise.adv_description" name="adv_description" required #adv_description="ngModel">
+                  <span *ngIf="f.submitted && adv_description.errors?.required">Please enter ID</span>
+                  <span *ngIf="f.submitted && adv_description.errors?.pattern">Invalid ID</span>
+
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Create Advertise</button>
+                <button style='margin-left:100px' (click)="home()" class="btn btn-primary"> Back to previous </button>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

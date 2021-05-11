@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <br>
+    <h1><b>Update product here</b></h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="update-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+
+                <div class="form-group">
+                  <label for="name">Product Id</label>
+                  <input type="text" class="form-control" disabled="disabled" id="product_id" required
+                    [(ngModel)]="product.product_id" name="product_id">
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Product Name</label>
+                  <input type="text" class="form-control" id="product_name" required [(ngModel)]="product.product_name"
+                    name="product_name">
+                </div>
+                <div class="form-group">
+                  <label for="name">Price</label>
+                  <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+                </div>
+                <div class="form-group">
+                  <label for="name">Quantity</label>
+                  <input type="text" class="form-control" id="quantity" required [(ngModel)]="product.quantity"
+                    name="quantity">
+                </div>
+                <div class="form-group">
+                  <label for="name">Product Status</label>
+                  <input type="text" class="form-control" id="product_status" required
+                    [(ngModel)]="product.product_status" name="product_status">
+                </div>
+                <button style='margin-right:16px' class="btn btn-success">Submit</button>
+                <button style='margin-right:16px' (click)="listPro()" class="btn btn-success">Back to Product</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

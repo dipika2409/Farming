@@ -1,0 +1,48 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <br>
+    <h1><b>Add Product</b></h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="product-form" role="form" form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+              <div class="controls">
+                <div class="form-group">
+                  <label for="name">Product Name</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="product_name" required [(ngModel)]="product.product_name"
+                    placeholder="Enter Product Name" name="product_name">
+                </div>
+                <div class="form-group">
+                  <label for="name">Price</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="price" required [(ngModel)]="product.price"
+                    placeholder="Enter Price" name="price">
+                </div>
+                <div class="form-group">
+                  <label for="name">Quantity</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="quantity" required [(ngModel)]="product.quantity"
+                    placeholder="Enter Quantity" name="quantity">
+                </div>
+                <div class="form-group">
+                  <label for="name">Product Status</label><span class="required">*</span>
+                  <input type="text" class="form-control" id="product_status" required
+                    [(ngModel)]="product.product_status" placeholder="Enter Product Status" name="product_status">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Create Product</button>
+                <button style='margin-left:100px' (click)="home()" class="btn btn-primary"> Previous page </button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
